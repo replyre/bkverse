@@ -66,6 +66,7 @@ const ViewBook = () => {
           throw new Error("Error deleting the book");
         }
       } catch (err) {
+        toast.error("Error deleting the book");
         console.log(err);
       }
     }
@@ -154,7 +155,7 @@ const ViewBook = () => {
               </tbody>
             </table>
           </div>
-          <div className="p-4 overflow-x-auto sm:hidden">
+          <div className="py-4 overflow-x-auto sm:hidden">
             <table className="min-w-full bg-white border border-gray-200">
               <thead className="sm:hidden">
                 <tr>
@@ -171,13 +172,13 @@ const ViewBook = () => {
                       <img
                         src={book.imgURL}
                         alt="Book Cover Preview"
-                        className="w-16 h-24 object-cover"
+                        className="w-24 h-34 object-cover"
                       />
                     </td>
-                    <td className="px-6 py-4 whitespace-no-wrap ">
+                    <td className="px-6 py-4 whitespace-no-wrap border-b ">
                       {book.name}
                     </td>
-                    <td className="px-6 py-4 whitespace-no-wrap ">
+                    <td className="px-6 py-4 whitespace-no-wrap  border-b ">
                       {book.author}
                     </td>
                     <td className="px-6 py-4 whitespace-no-wrap text-justify">

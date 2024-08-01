@@ -33,7 +33,7 @@ const AddBook = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     setLoading(true);
-    console.log("hi");
+    // console.log("hi");
 
     e.preventDefault();
     if (validateForm()) {
@@ -68,14 +68,14 @@ const AddBook = () => {
           throw new Error("Failed to create the Book");
         }
       } catch (error) {
+        toast.error("Failed to create the Book");
         console.log(error);
       }
-      console.log("Form submitted", BookData);
+      //   console.log("Form submitted", BookData);
     }
     setLoading(false);
   };
 
-  console.log(BookData);
   return (
     <div className="min-h-screen p-24 ">
       <p className="md:pl-20  md:text-left text-center mb-2 text-lg  font-bold">

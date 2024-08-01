@@ -4,6 +4,7 @@ import "./styles/home.css";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import ContentLoader from "react-content-loader";
+import toast from "react-hot-toast";
 import { FaGithubSquare, FaLinkedin } from "react-icons/fa";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -51,21 +52,24 @@ export default function Home() {
         throw new Error("Failed to fetch books");
       }
       const data = await res.json();
-      const sortedBooks = data.books.sort(
+      data.books.sort(
         (a: Book, b: Book) =>
           new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
       );
 
       setBooks(data.books);
     } catch (error) {
+      toast.error("Error loading books");
       console.error("Error loading books: ", error);
     }
   };
-  console.log(books);
+  // console.log(books);
   return (
     <div className="flex min-h-screen flex-col justify-between py-10 px-5 sm:p-24">
       <nav className=" flex justify-between  items-center">
-        <p className="text-4xl font-bold font-mono cursor-pointer">Replyr's</p>
+        <p className="text-3xl sm:text-4xl font-bold font-mono cursor-pointer">
+          Replyr's
+        </p>
         <a href="https://rahul-gupta-portfolio.vercel.app/" target="_blank">
           <button className="cssbuttons-io-button">
             Website

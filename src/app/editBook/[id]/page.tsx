@@ -30,6 +30,7 @@ const getBook = async (
     const data = await res.json();
     setBookData(data.book);
   } catch (err) {
+    toast.error("Failed to fetch Book");
     console.log(err);
   }
 };
@@ -46,7 +47,7 @@ const EditBook = ({ params }: any) => {
   useEffect(() => {
     getBook(id, setBookData);
   }, []);
-  console.log(BookData);
+  //   console.log(BookData);
   const validateForm = () => {
     const { name, author, description, imgURL } = BookData;
     const errors = [];
@@ -85,9 +86,10 @@ const EditBook = ({ params }: any) => {
           throw new Error("Failed to create the Book");
         }
       } catch (error) {
+        toast.error("Failed to create the Book");
         console.log(error);
       }
-      console.log("Form submitted", BookData);
+      //   console.log("Form submitted", BookData);
     }
   };
 
@@ -203,7 +205,7 @@ const EditBook = ({ params }: any) => {
             </div>
           </form>
           {BookData.imgURL && (
-            <div className="">
+            <div className="min-w-80 flex justify-center">
               <img
                 src={BookData.imgURL}
                 alt="Book Cover Preview"
@@ -212,7 +214,7 @@ const EditBook = ({ params }: any) => {
             </div>
           )}
           {!BookData.imgURL && (
-            <div className="min-w-80">
+            <div className="min-w-80 flex justify-center">
               <img
                 src={
                   "https://i.pinimg.com/originals/59/dd/5a/59dd5a6ec1c29fa87afa5d722cc19233.jpg"
