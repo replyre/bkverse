@@ -12,7 +12,10 @@ const AddBook = () => {
     imgURL: "",
   });
   const [loading, setLoading] = useState(false);
-
+  const isValidImageUrl = (url: string): boolean => {
+    const imagePattern = /\.(jpeg|jpg|gif|png|bmp)$/i;
+    return imagePattern.test(url);
+  };
   const validateForm = () => {
     const { name, author, description, imgURL } = BookData;
     const errors = [];
@@ -20,6 +23,7 @@ const AddBook = () => {
     if (!author) errors.push("Author is required.");
     if (!description) errors.push("Description is required.");
     if (!imgURL) errors.push("Book cover is required.");
+    if (!isValidImageUrl(imgURL)) errors.push("Invalid image URL.");
 
     if (errors.length > 0) {
       errors.map((e) => {
