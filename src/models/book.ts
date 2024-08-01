@@ -1,6 +1,6 @@
 import mongoose, { Schema, Document, Model } from "mongoose";
 
-// Define an interface for the book document
+//  interface for the book document
 interface IBook extends Document {
   name: string;
   author: string;
@@ -8,7 +8,7 @@ interface IBook extends Document {
   description: string;
 }
 
-// Define the schema
+//  the schema
 const bookSchema = new Schema<IBook>(
   {
     name: { type: String, required: true },

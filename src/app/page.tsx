@@ -66,23 +66,25 @@ export default function Home() {
     <div className="flex min-h-screen flex-col justify-between py-10 px-5 sm:p-24">
       <nav className=" flex justify-between  items-center">
         <p className="text-4xl font-bold font-mono cursor-pointer">Replyr's</p>
-        <button className="cssbuttons-io-button">
-          Sign IN
-          <div className="icon">
-            <svg
-              height="24"
-              width="24"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M0 0h24v24H0z" fill="none"></path>
-              <path
-                d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
-                fill="currentColor"
-              ></path>
-            </svg>
-          </div>
-        </button>
+        <a href="https://rahul-gupta-portfolio.vercel.app/" target="_blank">
+          <button className="cssbuttons-io-button">
+            Website
+            <div className="icon">
+              <svg
+                height="24"
+                width="24"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M0 0h24v24H0z" fill="none"></path>
+                <path
+                  d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+            </div>
+          </button>
+        </a>
       </nav>
       <section className=" bg-[url('/home.jpg')] rounded-lg my-5">
         <div className="bookverse py-2 bg-gradient-to-r from-white from-5% to-transparent hover:bg-gradient-to-tr  hover:rom-white hover:from-15% hover:to-transparent">
@@ -106,7 +108,7 @@ export default function Home() {
         </Link>
       </section>
       <section>
-        <p className="text-4xl mb-4">Latest Books: </p>
+        <p className="text-4xl my-4">Latest Books: </p>
 
         <Carousel responsive={responsive}>
           {books.length > 0 &&
@@ -140,7 +142,7 @@ export default function Home() {
         </Carousel>
         {books.length === 0 && <ContentLoader />}
       </section>
-      <section className="flex justify-between text-xl md:text-4xl font-bold mt-20">
+      <section className="flex justify-between text-lg md:text-4xl font-bold mt-20">
         <p>Total Books: {books.length || "---"}</p>
         <span className="flex items-center">
           <a href="mailto:replyrgupta@gmail.com" target="_blank">
