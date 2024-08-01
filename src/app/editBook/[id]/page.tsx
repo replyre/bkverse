@@ -20,7 +20,7 @@ const getBook = async (
   setBookData: React.Dispatch<React.SetStateAction<Book>>
 ) => {
   try {
-    const res = await fetch(`http://localhost:3000/api/books/${id}`, {
+    const res = await fetch(`https://bkverse.vercel.app/api/books/${id}`, {
       cache: "no-store",
     });
     if (!res.ok) {
@@ -66,7 +66,7 @@ const EditBook = ({ params }: any) => {
     e.preventDefault();
     if (validateForm()) {
       try {
-        const res = await fetch(`http://localhost:3000/api/books/${id}`, {
+        const res = await fetch(`https://bkverse.vercel.app/api/books/${id}`, {
           method: "PUT",
           headers: {
             "Content-type": "application/json",

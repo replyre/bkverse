@@ -38,7 +38,7 @@ const AddBook = () => {
     e.preventDefault();
     if (validateForm()) {
       try {
-        const res = await fetch("http://localhost:3000/api/books", {
+        const res = await fetch("https://bkverse.vercel.app/api/books", {
           method: "POST",
           headers: {
             "Content-type": "application/json",

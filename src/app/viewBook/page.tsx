@@ -32,7 +32,7 @@ const ViewBook = () => {
     setBooks: React.Dispatch<React.SetStateAction<Book[]>>
   ) => {
     try {
-      const res = await fetch("http://localhost:3000/api/books", {
+      const res = await fetch("https://bkverse.vercel.app/api/books", {
         cache: "no-store",
       });
       if (!res.ok) {
@@ -52,9 +52,12 @@ const ViewBook = () => {
 
     if (confirmed) {
       try {
-        const res = await fetch(`http://localhost:3000/api/books?id=${id}`, {
-          method: "Delete",
-        });
+        const res = await fetch(
+          `https://bkverse.vercel.app/api/books?id=${id}`,
+          {
+            method: "Delete",
+          }
+        );
 
         if (res.ok) {
           toast.success("book deleted");

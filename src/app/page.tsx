@@ -44,7 +44,7 @@ export default function Home() {
     setBooks: React.Dispatch<React.SetStateAction<Book[]>>
   ) => {
     try {
-      const res = await fetch("http://localhost:3000/api/books", {
+      const res = await fetch("https://bkverse.vercel.app/api/books", {
         cache: "no-store",
       });
       if (!res.ok) {
@@ -86,10 +86,10 @@ export default function Home() {
       </nav>
       <section className=" bg-[url('/home.jpg')] rounded-lg my-5">
         <div className="bookverse py-2 bg-gradient-to-r from-white from-5% to-transparent hover:bg-gradient-to-tr  hover:rom-white hover:from-15% hover:to-transparent">
-          <p className="bookverse2 sm:text-[18.5vw] text-[19vw] flex text-center">
+          <p className="bookverse2 sm:text-[16vw] text-[17.5vw] flex text-center">
             BookVerse
           </p>
-          <p className="bookverse1 sm:text-[18.5vw] text-[19vw] flex text-center ">
+          <p className="bookverse1 sm:text-[16vw] text-[17.5vw] flex text-center ">
             BookVerse
           </p>
         </div>
